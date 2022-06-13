@@ -1,4 +1,4 @@
-const errorHandler = (err, req, res, next) => {
+const errorMiddleware = (err, req, res, next) => {
   const statusCode = res.statusCode ? res.statusCode : 500;
   const message = err.message ? err.message : "Something went wrong";
   res.status(statusCode);
@@ -8,4 +8,4 @@ const errorHandler = (err, req, res, next) => {
   });
 };
 
-module.exports = { errorHandler };
+module.exports = { errorMiddleware };
