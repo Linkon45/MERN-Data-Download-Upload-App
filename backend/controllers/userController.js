@@ -31,7 +31,6 @@ const registerUser = asyncHandler(async (req, res) => {
       id: user._id,
       name: user.name,
       email: user.email,
-      password: user.password,
       token: generateJWTToken(user._id),
     });
   } else {
