@@ -1,11 +1,14 @@
-const errorMiddleware = (err, req, res, next) => {
-  const statusCode = res.statusCode ? res.statusCode : 500;
-  const message = err.message ? err.message : "Something went wrong";
-  res.status(statusCode);
-  res.json({
-    message: message,
-    stack: process.env.NODE_ENV === "production" ? "🥞" : err.stack,
-  });
-};
+const errorHandler = (err, req, res, next) => {
+  const statusCode = res.statusCode ? res.statusCode : 500
 
-module.exports = { errorMiddleware };
+  res.status(statusCode)
+
+  res.json({
+    message: err.message,
+    stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+  })
+}
+
+module.exports = {
+  errorHandler,
+}
