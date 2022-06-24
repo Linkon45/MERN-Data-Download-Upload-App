@@ -88,6 +88,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
   }
 
   await goal.remove();
+  await cloudinary.uploader.destroy(goal.cloudinaryID);
 
   res.status(200).json({ id: req.params.id });
 });
