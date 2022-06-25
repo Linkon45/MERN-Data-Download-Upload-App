@@ -51,7 +51,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>You have not set any goals</h3>
+          <h3>You don not have any data</h3>
         )}
       </section>
     </>
