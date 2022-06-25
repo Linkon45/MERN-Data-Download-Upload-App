@@ -17,7 +17,6 @@ function GoalForm() {
     formData.append("text", data.text);
     dispatch(createGoal(formData));
     setData({ text: "", image: "" });
-    // setText("");
   };
 
   const handleChange = (text) => (e) => {
